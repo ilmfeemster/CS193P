@@ -43,13 +43,13 @@ struct ContentView: View {
     
     var cardThemes: some View {
         HStack(spacing: 50) {
-            Button(action: {currentEmojis = halloweenEmojis}, label: {
+            Button(action: {currentEmojis = halloweenEmojis.shuffled()}, label: {
                 Image(systemName: "die.face.1.fill")
             })
-            Button(action: {currentEmojis = holidayEmojis}, label: {
+            Button(action: {currentEmojis = holidayEmojis.shuffled()}, label: {
                 Image(systemName: "die.face.2.fill")
             })
-            Button(action: {currentEmojis = flagEmojis}, label: {
+            Button(action: {currentEmojis = flagEmojis.shuffled()}, label: {
                 Image(systemName: "die.face.3.fill")
             })
         }
