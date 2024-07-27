@@ -43,17 +43,21 @@ struct ContentView: View {
     
     var cardThemes: some View {
         HStack(spacing: 50) {
-            Button(action: {currentEmojis = halloweenEmojis.shuffled()}, label: {
-                Image(systemName: "die.face.1.fill")
-            })
-            Button(action: {currentEmojis = holidayEmojis.shuffled()}, label: {
-                Image(systemName: "die.face.2.fill")
-            })
-            Button(action: {currentEmojis = flagEmojis.shuffled()}, label: {
-                Image(systemName: "die.face.3.fill")
-            })
+            themeLabelMaker(emojis: halloweenEmojis, name: "Halloween Emojis", icon: "moon.fill")
+            themeLabelMaker(emojis: holidayEmojis, name: "Holiday Emojis", icon: "gift.fill")
+            themeLabelMaker(emojis: flagEmojis, name: "Flag Emojis", icon: "flag.fill")
         }
         .imageScale(.large)
+    }
+    
+    
+    func themeLabelMaker(emojis: [String], name: String, icon: String) -> some View {
+        VStack(spacing: 5) {
+            Button(action: {currentEmojis = emojis.shuffled()}, label: {
+                Image(systemName: icon)
+            })
+            Text(name)
+        }
     }
 }
     
