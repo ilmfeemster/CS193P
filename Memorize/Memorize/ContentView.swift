@@ -43,9 +43,9 @@ struct ContentView: View {
     
     var cardThemes: some View {
         HStack(spacing: 50) {
-            themeLabelMaker(emojis: halloweenEmojis, name: "Halloween Emojis", icon: "moon.fill")
-            themeLabelMaker(emojis: holidayEmojis, name: "Holiday Emojis", icon: "gift.fill")
-            themeLabelMaker(emojis: flagEmojis, name: "Flag Emojis", icon: "flag.fill")
+            themeLabelMaker(emojis: halloweenEmojis, name: "Halloween Theme", icon: "moon.fill")
+            themeLabelMaker(emojis: holidayEmojis, name: "Holiday Theme", icon: "gift.fill")
+            themeLabelMaker(emojis: flagEmojis, name: "Flag Theme", icon: "flag.fill")
         }
         .imageScale(.large)
     }
@@ -56,7 +56,7 @@ struct ContentView: View {
             Button(action: {currentEmojis = emojis.shuffled()}, label: {
                 Image(systemName: icon)
             })
-            Text(name)
+            Text(name).font(.caption)
         }
     }
 }
